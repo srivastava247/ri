@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Sachin Tekriwal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#0a0a16;
+    --bg-2:#0e0d21;
+    --panel:#12122a;
+    --panel-line:rgba(255,255,255,0.08);
+    --gold:#ffc93c;
+    --pink:#ff4fa3;
+    --purple:#a63bff;
+    --blue:#4d7cff;
+    --text:#f2f1fb;
+    --text-dim:#a7a5c4;
+    --grad: linear-gradient(92deg,var(--gold) 0%,var(--pink) 35%,var(--purple) 65%,var(--blue) 100%);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(circle at 15% 0%, rgba(166,59,255,0.16), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(77,124,255,0.14), transparent 40%),
+      radial-gradient(circle at 50% 100%, rgba(255,79,163,0.10), transparent 45%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+  a{text-decoration:none; color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%; display:block;}
+  .grad-text{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
+  section{position:relative;}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(14px);
+    background:rgba(10,10,22,0.65);
+    border-bottom:1px solid var(--panel-line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .brand{display:flex; align-items:center; gap:12px; font-family:'Sora',sans-serif; font-weight:700; letter-spacing:0.02em;}
+  .brand-badge{
+    width:38px; height:38px; border-radius:10px;
+    border:1.5px solid transparent;
+    background:
+      linear-gradient(var(--bg-2),var(--bg-2)) padding-box,
+      var(--grad) border-box;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Sora',sans-serif; font-weight:800; font-size:15px;
+  }
+  .brand-badge span{
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .brand-name{font-size:16px;}
+  .brand-name small{display:block; font-weight:500; font-size:10px; letter-spacing:0.16em; color:var(--text-dim); font-family:'Inter',sans-serif;}
+  nav ul{display:flex; gap:30px; font-size:14px; font-weight:500;}
+  nav ul a{color:var(--text-dim); transition:color 0.2s;}
+  nav ul a:hover, nav ul a.active{color:var(--text);}
+  .nav-cta{
+    padding:9px 20px; border-radius:999px; font-size:13px; font-weight:600;
+    background:var(--grad); color:#0a0a16;
+  }
+
+  .page-hero{
+    padding:70px 0 50px; text-align:left;
+  }
+  .page-hero .section-label{margin-bottom:14px;}
+  .page-hero h1{
+    font-family:'Sora',sans-serif; font-weight:800;
+    font-size:clamp(32px,6vw,56px); line-height:1.05; letter-spacing:-0.01em;
+  }
+  .page-hero p{color:var(--text-dim); margin-top:18px; max-width:620px; font-size:15.5px; line-height:1.7;}
+
+  .hero{
+    padding:110px 0 90px;
+    text-align:left;
+    overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:11px; letter-spacing:0.22em; font-weight:600; color:var(--text-dim);
+    border:1px solid var(--panel-line); padding:7px 16px; border-radius:999px;
+    margin-bottom:34px;
+  }
+  .eyebrow::before{content:''; width:6px; height:6px; border-radius:50%; background:var(--pink); box-shadow:0 0 10px var(--pink);}
+  .hero h1{
+    font-family:'Sora',sans-serif; font-weight:800;
+    font-size:clamp(40px, 8vw, 92px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+  }
+  .hero .tagline{
+    margin-top:22px;
+    font-size:clamp(14px,2vw,17px);
+    color:var(--text-dim);
+    font-weight:500;
+    letter-spacing:0.02em;
+  }
+  .hero .desc{
+    max-width:560px; margin:26px 0 0;
+    color:var(--text-dim); font-size:16px; line-height:1.7;
+  }
+  .hero-ctas{
+    margin-top:42px; display:flex; gap:16px; justify-content:flex-start; flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--grad); color:#0a0a16; font-weight:700; font-size:14px;
+    padding:15px 30px; border-radius:999px; border:none; cursor:pointer;
+  }
+  .btn-ghost{
+    border:1px solid var(--panel-line); color:var(--text); font-weight:600; font-size:14px;
+    padding:15px 30px; border-radius:999px; background:transparent; cursor:pointer;
+  }
+  .btn-ghost:hover{border-color:rgba(255,255,255,0.3);}
+
+  .stat-strip{
+    margin-top:80px; display:flex; justify-content:center; gap:0; flex-wrap:wrap;
+    border-top:1px solid var(--panel-line); border-bottom:1px solid var(--panel-line);
+    padding:34px 0;
+  }
+  .stat{padding:0 44px; text-align:center; border-right:1px solid var(--panel-line);}
+  .stat:last-child{border-right:none;}
+  .stat b{display:block; font-family:'Sora',sans-serif; font-size:30px; font-weight:700;}
+  .stat span{font-size:12px; color:var(--text-dim); letter-spacing:0.05em;}
+
+  .section-head{margin-bottom:52px; text-align:center;}
+  .section-label{
+    font-size:12px; font-weight:700; letter-spacing:0.2em; color:var(--pink);
+    text-transform:uppercase; margin-bottom:14px;
+  }
+  .section-title{
+    font-family:'Sora',sans-serif; font-weight:700; font-size:clamp(28px,4vw,42px);
+  }
+  .section-sub{color:var(--text-dim); margin-top:14px; max-width:560px; margin-left:auto; margin-right:auto; font-size:15px; line-height:1.7;}
+
+  .about{padding:90px 0;}
+  .about-grid{
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center;
+  }
+  .about-visual{
+    position:relative; aspect-ratio:1/1; border-radius:24px;
+    border:1px solid var(--panel-line);
+    background:linear-gradient(160deg, rgba(166,59,255,0.12), rgba(77,124,255,0.06));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .about-visual .core{
+    width:64%; aspect-ratio:1/1; border-radius:50%;
+    background:var(--grad);
+    filter:blur(40px); opacity:0.5; position:absolute;
+  }
+  .about-visual svg{position:relative; width:70%; height:70%;}
+  .about-text h3{font-family:'Sora',sans-serif; font-size:26px; margin-bottom:18px; font-weight:700;}
+  .about-text p{color:var(--text-dim); line-height:1.85; font-size:15.5px; margin-bottom:16px;}
+  .about-tags{display:flex; gap:10px; flex-wrap:wrap; margin-top:26px;}
+  .about-tags span{
+    font-size:12px; padding:8px 16px; border-radius:999px; border:1px solid var(--panel-line); color:var(--text-dim);
+  }
+  .about-tags span.highlight{
+    border-color:transparent;
+    background:linear-gradient(var(--bg-2),var(--bg-2)) padding-box, var(--grad) border-box;
+    border:1.5px solid transparent; color:var(--text); font-weight:600;
+  }
+
+  .research{padding:90px 0; background:var(--bg-2); border-top:1px solid var(--panel-line); border-bottom:1px solid var(--panel-line);}
+  .research-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .r-card{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:18px; padding:32px 26px;
+    transition:transform 0.25s, border-color 0.25s;
+  }
+  .r-card:hover{transform:translateY(-6px); border-color:rgba(255,255,255,0.2);}
+  .r-icon{
+    width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    background:var(--grad); margin-bottom:22px; font-size:20px;
+  }
+  .r-card h4{font-family:'Sora',sans-serif; font-size:18px; margin-bottom:12px; font-weight:600;}
+  .r-card p{color:var(--text-dim); font-size:14px; line-height:1.7;}
+  .r-card .r-tag{display:inline-block; margin-top:18px; font-size:11px; letter-spacing:0.08em; color:var(--pink); font-weight:700; text-transform:uppercase;}
+
+  .courses{padding:90px 0;}
+  .course-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .c-card{
+    border:1px solid var(--panel-line); border-radius:18px; overflow:hidden;
+    background:var(--panel); display:flex; flex-direction:column;
+  }
+  .c-top{
+    padding:26px 26px 20px; border-bottom:1px solid var(--panel-line);
+    display:flex; align-items:flex-start; justify-content:space-between;
+  }
+  .c-level{font-size:11px; font-weight:700; letter-spacing:0.08em; padding:5px 12px; border-radius:999px; border:1px solid var(--panel-line); color:var(--text-dim);}
+  .c-body{padding:24px 26px; flex:1;}
+  .c-body h4{font-family:'Sora',sans-serif; font-size:19px; font-weight:600; margin-bottom:10px;}
+  .c-body p{color:var(--text-dim); font-size:14px; line-height:1.7; margin-bottom:18px;}
+  .c-meta{display:flex; gap:16px; font-size:12.5px; color:var(--text-dim); margin-bottom:0;}
+  .c-meta b{color:var(--text); font-weight:600;}
+  .c-students{
+    display:flex; align-items:center; gap:8px; margin-top:16px; font-size:12.5px; color:var(--text-dim);
+  }
+  .avatars{display:flex;}
+  .avatars span{
+    width:22px; height:22px; border-radius:50%; border:2px solid var(--panel);
+    background:var(--grad); margin-left:-8px; display:inline-block;
+  }
+  .avatars span:first-child{margin-left:0;}
+  .c-bottom{padding:20px 26px; border-top:1px solid var(--panel-line);}
+  .c-enroll{
+    display:block; text-align:center; width:100%; padding:12px; border-radius:10px;
+    background:var(--grad); color:#0a0a16; font-weight:700; font-size:13.5px; border:none; cursor:pointer;
+  }
+
+  .social{padding:90px 0; background:var(--bg-2); border-top:1px solid var(--panel-line); border-bottom:1px solid var(--panel-line);}
+  .social-card{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:22px; padding:44px;
+    display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:center;
+  }
+  .social-card h3{font-family:'Sora',sans-serif; font-size:26px; font-weight:700; margin-bottom:14px;}
+  .social-card p{color:var(--text-dim); font-size:15px; line-height:1.8; margin-bottom:22px;}
+  .social-links{display:flex; gap:14px; flex-wrap:wrap;}
+  .social-stats{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .social-stats .stat-box{
+    text-align:center; padding:22px 10px; border:1px solid var(--panel-line); border-radius:14px;
+  }
+  .social-stats .stat-box b{display:block; font-family:'Sora',sans-serif; font-size:26px; font-weight:700;}
+  .social-stats .stat-box span{font-size:11px; color:var(--text-dim); letter-spacing:0.05em;}
+  .activity-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:36px;}
+  .activity-card{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:16px; padding:26px;
+  }
+  .activity-card .r-icon{width:40px; height:40px; font-size:17px; margin-bottom:16px;}
+  .activity-card h4{font-family:'Sora',sans-serif; font-size:16px; margin-bottom:10px; font-weight:600;}
+  .activity-card p{color:var(--text-dim); font-size:13.5px; line-height:1.7;}
+
+  .contact{padding:90px 0; background:var(--bg-2); border-top:1px solid var(--panel-line);}
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px;}
+  .contact-info h3{font-family:'Sora',sans-serif; font-size:28px; margin-bottom:18px; font-weight:700;}
+  .contact-info p{color:var(--text-dim); line-height:1.8; font-size:15px; margin-bottom:30px;}
+  .info-row{display:flex; align-items:center; gap:14px; margin-bottom:18px; font-size:14px;}
+  .info-icon{
+    width:38px; height:38px; border-radius:10px; border:1px solid var(--panel-line);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  form{background:var(--panel); border:1px solid var(--panel-line); border-radius:18px; padding:34px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+  label{font-size:12.5px; color:var(--text-dim); display:block; margin-bottom:8px; font-weight:500;}
+  input, textarea{
+    width:100%; background:var(--bg); border:1px solid var(--panel-line); border-radius:10px;
+    padding:12px 14px; color:var(--text); font-family:'Inter',sans-serif; font-size:14px;
+  }
+  input:focus, textarea:focus{outline:2px solid var(--purple); outline-offset:1px; border-color:transparent;}
+  textarea{resize:vertical; min-height:110px; margin-bottom:22px;}
+  .form-full{margin-bottom:16px;}
+  .submit-btn{
+    width:100%; padding:14px; border-radius:10px; border:none; cursor:pointer;
+    background:var(--grad); color:#0a0a16; font-weight:700; font-size:14.5px;
+  }
+
+  /* ---------- COMMENTS ---------- */
+  .comments{padding:90px 0;}
+  .comments .section-head{text-align:left; margin-bottom:36px;}
+  .comment-form{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:18px; padding:28px; margin-bottom:36px;
+  }
+  .comment-form .form-row{grid-template-columns:1fr 1fr;}
+  .comment-list{display:flex; flex-direction:column; gap:18px;}
+  .comment-item{
+    background:var(--panel); border:1px solid var(--panel-line); border-radius:16px; padding:22px 24px;
+  }
+  .comment-item .c-head{display:flex; align-items:center; gap:12px; margin-bottom:10px;}
+  .comment-item .c-avatar{
+    width:34px; height:34px; border-radius:50%; background:var(--grad); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; color:#0a0a16;
+    font-family:'Sora',sans-serif;
+  }
+  .comment-item .c-name{font-weight:600; font-size:14px;}
+  .comment-item .c-time{font-size:11.5px; color:var(--text-dim); margin-left:auto;}
+  .comment-item .c-text{color:var(--text-dim); font-size:14px; line-height:1.7;}
+  .comment-empty{color:var(--text-dim); font-size:14px; padding:18px 0;}
+
+  /* ---------- SITEMAP ---------- */
+  .sitemap-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px; padding:20px 0 90px;}
+  .sitemap-col h4{font-family:'Sora',sans-serif; font-size:15px; margin-bottom:16px; color:var(--pink); letter-spacing:0.05em; text-transform:uppercase;}
+  .sitemap-col ul{display:flex; flex-direction:column; gap:12px;}
+  .sitemap-col a{color:var(--text-dim); font-size:14.5px;}
+  .sitemap-col a:hover{color:var(--text);}
+
+  footer{padding:44px 0; text-align:center; border-top:1px solid var(--panel-line);}
+  footer p{color:var(--text-dim); font-size:13px;}
+  footer .foot-tagline{
+    font-size:11px; letter-spacing:0.18em; color:var(--text-dim); margin-bottom:14px; font-weight:600;
+  }
+  footer .foot-links{display:flex; justify-content:center; gap:22px; margin-bottom:18px; font-size:12.5px; flex-wrap:wrap;}
+  footer .foot-links a{color:var(--text-dim);}
+  footer .foot-links a:hover{color:var(--text);}
+
+  @media(max-width:860px){
+    nav ul{display:none;}
+    .nav-cta{display:none;}
+    .about-grid, .contact-grid, .social-card{grid-template-columns:1fr; gap:40px;}
+    .research-grid, .course-grid, .activity-grid, .sitemap-grid, .social-stats{grid-template-columns:1fr;}
+    .stat{padding:0 22px;}
+    .form-row{grid-template-columns:1fr;}
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="index.html">
+        <div class="brand-badge"><span>ST</span></div>
+        <div class="brand-name">Sachin Tekriwal<small>AI RESEARCH &amp; EDUCATION</small></div>
+      </a>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="social.html">Social</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="section-label">ABOUT</div>
+    <h1>A mind built for <span class="grad-text">systems.</span></h1>
+    <p>AI Engineer, AI Scientist &amp; Teacher — 20+ years turning complex problems into elegant, working systems.</p>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div class="about-visual">
+      <div class="core"></div>
+      <svg viewBox="0 0 200 200" fill="none">
+        <defs>
+          <linearGradient id="g2" x1="0" y1="0" x2="200" y2="200">
+            <stop offset="0%" stop-color="#ffc93c"/>
+            <stop offset="35%" stop-color="#ff4fa3"/>
+            <stop offset="65%" stop-color="#a63bff"/>
+            <stop offset="100%" stop-color="#4d7cff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="70" stroke="url(#g2)" stroke-width="1.4" opacity="0.7"/>
+        <circle cx="100" cy="100" r="46" stroke="url(#g2)" stroke-width="1.4" opacity="0.5"/>
+        <path d="M40 100 L80 100 L80 60 L120 60 L120 140 L160 140" stroke="url(#g2)" stroke-width="2"/>
+        <path d="M40 70 L60 70 L60 130 L100 130" stroke="url(#g2)" stroke-width="2" opacity="0.6"/>
+        <circle cx="40" cy="100" r="4" fill="url(#g2)"/>
+        <circle cx="160" cy="140" r="4" fill="url(#g2)"/>
+        <circle cx="100" cy="130" r="4" fill="url(#g2)"/>
+        <circle cx="120" cy="60" r="4" fill="url(#g2)"/>
+      </svg>
+    </div>
+    <div class="about-text">
+      <div class="section-label">WHO I AM</div>
+      <h3>Sachin Tekriwal</h3>
+      <p>Sachin Tekriwal is an <strong>AI Engineer, AI Scientist and Teacher</strong> based in Mumbai, India, with 20+ years of experience in enterprise software and applied AI. He holds an MCA from MGU and an Advanced Diploma from IIIT Bangalore, and currently serves as <strong>CTO at NKB Workers</strong>.</p>
+      <p>He approaches every challenge as an architecture problem — understanding its structure, identifying inefficiencies, and engineering solutions that compound over time. His work sits at the intersection of intelligence and automation, guided by a simple philosophy: reduce friction, increase signal, automate deliberately.</p>
+      <p>Alongside his engineering work, he teaches — helping learners move from curiosity to genuine, applied AI capability.</p>
+      <div class="about-tags">
+        <span class="highlight">AI Scientist</span>
+        <span>AI Engineer</span>
+        <span>Teacher</span>
+        <span>20+ Years Experience</span>
+        <span>CTO, NKB Workers</span>
+        <span>MCA, MGU</span>
+        <span>Adv. Diploma, IIIT Bangalore</span>
+        <span>Mumbai, India</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="research">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">PRINCIPLES</div>
+      <div class="section-title">Work Philosophy</div>
+      <p class="section-sub">"The best system is the one that disappears into the work."</p>
+    </div>
+    <div class="research-grid">
+      <div class="r-card">
+        <div class="r-icon">🧩</div>
+        <h4>Simplicity over Complexity</h4>
+        <p>Every layer of unnecessary complexity is a point of failure. Elegant systems do more with less.</p>
+      </div>
+      <div class="r-card">
+        <div class="r-icon">⚙️</div>
+        <h4>Automation over Repetition</h4>
+        <p>If a process can be defined, it can be automated. Human attention is reserved for real judgement.</p>
+      </div>
+      <div class="r-card">
+        <div class="r-icon">🏗️</div>
+        <h4>Systems over Tasks</h4>
+        <p>Solving one problem is temporary. Building the system that prevents the problem class — that's the work worth doing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-tagline grad-text">LEARN · RESEARCH · INNOVATE · TRANSFORM</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="courses.html">Courses</a>
+      <a href="social.html">Social Activities</a>
+      <a href="contact.html">Contact</a>
+      <a href="sitemap.html">Sitemap</a>
+    </div>
+    <p>© 2026 Sachin Tekriwal — AI Research &amp; Education Center. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- Live Chat Widget (Tawk.to) -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s2=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s2.parentNode.insertBefore(s1,s2);
+})();
+</script>
+
+</body>
+</html>
